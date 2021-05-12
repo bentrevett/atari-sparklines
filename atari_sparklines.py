@@ -10,6 +10,9 @@ parser.add_argument('--n_rows', default=16, type=int)
 parser.add_argument('--n_cols', default=8, type=int)
 parser.add_argument('--fig_height', default=16, type=int)
 parser.add_argument('--fig_width', default=24, type=int)
+parser.add_argument('--color', default='black', type=str)
+parser.add_argument('--line_width', default=0.7, type=float)
+parser.add_argument('--fig_name', default='sparklines', type=str)
 args = parser.parse_args()
 
 env = gym.make(f'{args.game}-ram-v4')
@@ -39,7 +42,7 @@ fig, axs = plt.subplots(height, width, figsize=(args.fig_width,args.fig_height))
 for i, ax in enumerate(axs):
     for j, a in enumerate(ax):
         index = i*width + j
-        axs[i, j].plot(values[:,index], color='black', linewidth=0.7)
+        axs[i, j].plot(values[:,index], color=args.color, linewidth=args.line_width)
         axs[i, j].set_axis_off()
 
-plt.savefig('sparklines')
+plt.savefig(args.fig_name)
