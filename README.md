@@ -20,7 +20,7 @@ The values of RAM for every frame are plotted. There are 60 frames-per-second. A
 
 `python atari_sparklines.py --n_frames 600`, gets the first 600 frames (10 seconds)
 
-`python atari_sparklines.py --n_rows 16 --n_cols 8`, layout of the sparklines plot in the figure
+`python atari_sparklines.py --n_rows 16 --n_cols 8`, layout of the sparklines plot in the figure (this must equal the number of RAM values, which should always be 128)
 
 `python atari_sparklines.py --fig_width 24 --fig_height 16`, width and height of the figure
 

@@ -37,7 +37,7 @@ values = get_ram_values(env, args.n_frames)
 
 height, width = args.n_rows, args.n_cols
 x, y = values.shape
-assert height * width == y
+assert height * width == y, f'n_rows ({args.n_rows}) * n_cols ({args.n_cols}) must equal number of RAM values ({y})'
 fig, axs = plt.subplots(height, width, figsize=(args.fig_width,args.fig_height))
 for i, ax in enumerate(axs):
     for j, a in enumerate(ax):
